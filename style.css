@@ -19220,3 +19220,9 @@ a:focus {
 .bx-wrapper .bx-pager.bx-default-pager a.active {
   background: #ff7236;
 }
+.dropdown-menu{
+  background-color: rgb(250, 108, 13)  !important;;
+}
+.navbar-brand{
+  margin-top: -30px !important;
+}
