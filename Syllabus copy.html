@@ -205,47 +205,71 @@
                          
                             <div class="booksmedia-fullwidth">
                                 <ul id="underlist">
-                                    <li id="listelement">    
-                                       
-                                        <figure>
-                                            <a href="https://drive.google.com/file/d/1AauoY25EJpYectO6JO_EMSydGBakDHa_/view?usp=sharing">
-                                                
-                                              
-                                                <iframe src="https://drive.google.com/file/d/1AauoY25EJpYectO6JO_EMSydGBakDHa_/preview" width="100%" height="480"></iframe>
-                                            
-                                            </a>
-                                            <figcaption>
-                                                <header>
-                                                    <h4><a href="https://drive.google.com/file/d/1AauoY25EJpYectO6JO_EMSydGBakDHa_/view?usp=sharing">Batch 2019-2023</a></h4>
-                                                  
-                                                    
-                                                </header>
-                                                <footer class="entry-footer">
-                                                    <a class="btn btn-dark-gray" href="https://drive.google.com/file/d/1AauoY25EJpYectO6JO_EMSydGBakDHa_/view?usp=sharing">Read More</a>
-                                                </footer>
-                                            </figcaption>
-                                        </figure>                                                
-                                    </li>
+                                    
 
                              
             
                               
 
                                 </ul>
-                            </div>
-                            <nav class="navigation pagination text-center">
-                                <h2 class="screen-reader-text">Posts navigation</h2>
-                                <div class="nav-links">
-                                    <a class="prev page-numbers" href="#."><i class="fa fa-long-arrow-left"></i> Previous</a>
-                                    <a class="page-numbers" href="#.">1</a>
-                                    <span class="page-numbers current">2</span>
-                                    <a class="page-numbers" href="#.">3</a>
-                                    <a class="page-numbers" href="#.">4</a>
-                                    <a class="next page-numbers" href="#.">Next <i class="fa fa-long-arrow-right"></i></a>
+                         
+        <!-- Start: Cart Section -->
+        <div id="content" class="site-content">
+            <div id="primary" class="content-area">
+                <main id="main" class="site-main">
+                    <div class="signin-main">
+                        <div class="container">
+                            <div class="woocommerce">
+                                <div class="woocommerce-login">
+                                    <div class="company-info signin-register">
+                                        
+                                            <div class="row">
+                                               
+                                                    <div class="company-detail bg-dark ">
+                                                        <div class="signin-head">
+                                                            <h2>Book Details</h2>
+                                                            <span class="underline left"></span>
+                                                            <p style="color: white;">Please Upload your syllabus if it is not available here.  </p>
+                                                        </div>
+                                                        <form class="login" method="post">
+                                                            <p class="form-row form-row-first input-required">
+                                                                <label>
+                                                                    <span class="first-letter">Batch Year</span>  
+                                                                    <span class="second-letter">*</span>
+                                                                </label>
+                                                                <input type="text"  id="batch" name="authername" class="input-text">
+                                                             </p>
+
+                                                            <p class="form-row form-row-last input-required">
+                                                                <label>
+                                                                    <span class="first-letter">Book Link</span>
+                                                                    <span class="second-letter">*</span>    
+                                                                </label>
+                                                                <input type="text" id="booklink" name="sendername" class="input-text">
+                                                            </p>
+                                                            <p class="form-row form-row-first input-required">
+                                                                <label>
+                                                                    <span class="first-letter">Preview Link</span>  
+                                                                </label>
+                                                                <input type="text"  id="previewlink" name="authername" class="input-text">
+                                                             </p>
+                                                            <input type="submit" id="submit" value="Upload" name="signup" class="button btn btn-default" >
+                                                            <div class="clear"></div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                           </div>
+                                   
+                             
                                 </div>
-                            </nav>
+                            </div>
                         </div>
-                       <!-- End: Social Network -->
+                    </div>
+                </main>
+            </div>
+        </div>
+        <!-- End: Cart Section -->
         
         <!-- Start: Footer -->
         <footer class="site-footer" style="margin-top: 50px;">
@@ -301,40 +325,163 @@
         <!-- End: Footer -->
 
         <!-- jQuery Latest Version 1.x -->
-        <script type="text/javascript" >
-               var a = 'https://drive.google.com/file/d/1AauoY25EJpYectO6JO_EMSydGBakDHa_/view?usp=sharing';
-               var b = "https://drive.google.com/file/d/1AauoY25EJpYectO6JO_EMSydGBakDHa_/preview" ;
-              var div = document.createElement('div');
+        
+<script type="module">
+
+        console.log("1ok ok ")
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyCxqucoQRN16OHXidFvBmSrUlvg6zRrXuA",
+        authDomain: "aucivilmaterials.firebaseapp.com",
+        databaseURL: "https://aucivilmaterials-default-rtdb.firebaseio.com",
+        projectId: "aucivilmaterials",
+        storageBucket: "aucivilmaterials.appspot.com",
+        messagingSenderId: "536923099886",
+        appId: "1:536923099886:web:b593a5b763dbf2174159ff"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+    
+      import { getDatabase, ref, child, get,set } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
+
+      const db = getDatabase();
+      function connect(event) {
+        event.preventDefault()
+        var batch=document.getElementById('batch').value;
+        var booklink=document.getElementById('booklink').value;
+        var previewlink=document.getElementById('previewlink').value;
+
+        if (batch == "" || booklink=="" ) {
+        alert("Batch,Booklink must be filled out");}
+        else{
+          set(ref(db,'Syllabus/'+batch ),{
+            batch:batch,
+            booklink:booklink,
+            previewlink:previewlink,  
+          })
+          .then(()=>{alert("Your material was sent successfully! Our team will update it you soon.");
+        })
+        .catch((error) => {
+         console.error(error);
+         });
+        }
+    
+      }
+document.getElementById('submit').addEventListener('click',connect);
+// end of upload
+
+/// Toshow book
+
+    function addItemsToList(booklink,batch,previewlink){
+      var booklink = booklink ;
+      var batch = batch;
+      var previewlink = previewlink;
+      if(previewlink != ""){
+        previewlink="https://drive.google.com/file/d/11_6GrDeLP_OFwOANMZ_0NKrp_fR6gkrd/preview";
+      }
+              var div = document.createElement('li');
               div.setAttribute('class', 'post block bc2');
-              div.innerHTML = `       <li id="listelement">    
+              div.innerHTML = `          
                                        
                                        <figure>
-                                           <a href=${a}>
-                                               
-                                             
-                                               <iframe src=${b} width="100%" height="480"></iframe>
-                                           
+                                           <a href=${booklink}>
+                                               <iframe src=${previewlink} width="100%" height="480"></iframe>
                                            </a>
                                            <figcaption>
                                                <header>
-                                                   <h4><a href=${a}>Batch 2019-2023</a></h4>
-                                                 
-                                                   
+                                                <h4><a href=${booklink}>${batch} Batch</a></h4>
                                                </header>
                                                <footer class="entry-footer">
-                                                   <a class="btn btn-dark-gray" href=${a}>Read More</a>
+                                                   <a class="btn btn-dark-gray" href=${booklink}>Read More</a>
                                                </footer>
                                            </figcaption>
                                        </figure>                                                
-                                        </li>`;
+                                      `;
                 document.getElementById('underlist').appendChild(div);
+            }
 
 
 
 
-        </script>
+        const dbRef = ref(getDatabase());
+
+        get(child(dbRef, `Syllabus/`)).then((snapshot) => {
+          if (snapshot.exists()) {
+            snapshot.forEach(
+                function(ChildSnapshot){
+                 var x=ChildSnapshot.val();
+                let batch = ChildSnapshot.val().batch;
+                let booklink = ChildSnapshot.val().booklink;
+                let previewlink = ChildSnapshot.val().previewlink;
+                addItemsToList(booklink,batch,previewlink);
+                }
+            )        
+          } else {
+            console.log("No data available");
+          }
+        }).catch((error) => {
+          console.error(error);
+        });
+  
+    
+      </script>
+   
+        <!-- jQuery Latest Version 1.x -->
+        <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
         
-       
+        <!-- jQuery UI -->
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+        
+        <!-- jQuery Easing -->
+        <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        
+        <!-- Mobile Menu -->
+        <script type="text/javascript" src="js/mmenu.min.js"></script>
+        
+        <!-- Harvey - State manager for media queries -->
+        <script type="text/javascript" src="js/harvey.min.js"></script>
+        
+        <!-- Waypoints - Load Elements on View -->
+        <script type="text/javascript" src="js/waypoints.min.js"></script>
+
+        <!-- Facts Counter -->
+        <script type="text/javascript" src="js/facts.counter.min.js"></script>
+
+        <!-- MixItUp - Category Filter -->
+        <script type="text/javascript" src="js/mixitup.min.js"></script>
+
+        <!-- Owl Carousel -->
+        <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+        
+        <!-- Accordion -->
+        <script type="text/javascript" src="js/accordion.min.js"></script>
+        
+        <!-- Responsive Tabs -->
+        <script type="text/javascript" src="js/responsive.tabs.min.js"></script>
+        
+        <!-- Responsive Table -->
+        <script type="text/javascript" src="js/responsive.table.min.js"></script>
+        
+        <!-- Masonry -->
+        <script type="text/javascript" src="js/masonry.min.js"></script>
+        
+        <!-- Carousel Swipe -->
+        <script type="text/javascript" src="js/carousel.swipe.min.js"></script>
+        
+        <!-- bxSlider -->
+        <script type="text/javascript" src="js/bxslider.min.js"></script>
+        
+        <!-- Custom Scripts -->
+        <script type="text/javascript" src="js/main.js"></script>
 
     </body>
 
