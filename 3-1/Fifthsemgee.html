@@ -528,7 +528,7 @@
     import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
         const dbRef = ref(getDatabase());
 
-        get(child(dbRef, `materials/Seventh Semister/Geo-Environmental Engineering`)).then((snapshot) => {
+        get(child(dbRef, `materials/Fifth Semister/Geo-Environmental Engineering`)).then((snapshot) => {
           if (snapshot.exists()) {
             snapshot.forEach(
                 function(ChildSnapshot){
